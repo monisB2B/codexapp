@@ -18,9 +18,7 @@ app.use('/api/locations', verifyToken, locationRoutes);
 
 if (process.env.NODE_ENV !== 'test') {
   const port = process.env.PORT || 3000;
-  app.listen(port, () =>
-    console.log(`Server listening on http://localhost:${port}`)
-  );
+
 }
 
 export default app;
