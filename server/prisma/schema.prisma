@@ -1,0 +1,48 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id       Int    @id @default(autoincrement())
+  email    String @unique
+  username String
+  password String
+  items    Item[]
+}
+
+model Location {
+  id          Int    @id @default(autoincrement())
+  name        String
+  address     String?
+  description String?
+  items       Item[]
+}
+
+model Item {
+  id         Int     @id @default(autoincrement())
+  sku        String  @unique
+  name       String
+  qty        Int
+  cost       Float?
+  sellPrice  Float?
+  locationId Int
+  location   Location @relation(fields: [locationId], references: [id])
+  userId     Int
+  user       User     @relation(fields: [userId], references: [id])
+  moves      Movement[]
+}
+
+model Movement {
+  id        Int      @id @default(autoincrement())
+  itemId    Int
+  type      String
+  qty       Int
+  note      String?
+  createdAt DateTime @default(now())
+  item      Item     @relation(fields: [itemId], references: [id])
+}
