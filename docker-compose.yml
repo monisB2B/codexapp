@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  server:
+    build: ./server
+    volumes:
+      - ./server:/app
+      - db-data:/app/dev.db
+    env_file: .env.example
+    ports:
+      - '3000:3000'
+  client:
+    build: ./client
+    volumes:
+      - ./client:/app
+    ports:
+      - '5173:5173'
+volumes:
+  db-data:
