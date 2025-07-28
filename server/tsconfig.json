@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+<<<<<<< HEAD
     "target": "ES2022",
     "module": "ES2022",
     "moduleResolution": "Node",
@@ -8,4 +9,15 @@
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
+=======
+    "target": "es2020",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/**/*"]
+>>>>>>> a6d5801 (chore(server): run API with ts-node-dev & add TS config)
 }

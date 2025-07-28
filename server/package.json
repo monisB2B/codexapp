@@ -1,9 +1,15 @@
 {
   "name": "server",
   "version": "1.0.0",
+<<<<<<< HEAD
   "type": "module",
   "scripts": {
     "dev": "nodemon src/index.ts",
+=======
+  "type": "commonjs",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+>>>>>>> a6d5801 (chore(server): run API with ts-node-dev & add TS config)
     "start": "node dist/index.js",
     "seed": "node prisma/seed.js",
     "test": "jest"
@@ -23,8 +29,15 @@
     "ts-jest": "^29.1.1",
     "typescript": "^5.4.5",
     "ts-node": "^10.9.2",
+<<<<<<< HEAD
     "nodemon": "^3.1.0",
     "prisma": "^5.13.0",
+=======
+    "ts-node-dev": "^2.0.0",
+    "nodemon": "^3.1.0",
+    "prisma": "^5.13.0",
+    "@types/node": "^20.10.6",
+>>>>>>> a6d5801 (chore(server): run API with ts-node-dev & add TS config)
     "@types/jest": "^29.5.3"
   }
 }

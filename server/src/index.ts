@@ -18,7 +18,13 @@ app.use('/api/locations', verifyToken, locationRoutes);
 
 if (process.env.NODE_ENV !== 'test') {
   const port = process.env.PORT || 3000;
+<<<<<<< HEAD
   app.listen(port, () => console.log(`Server running on ${port}`));
+=======
+  app.listen(port, () =>
+    console.log(`Server listening on http://localhost:${port}`)
+  );
+>>>>>>> a6d5801 (chore(server): run API with ts-node-dev & add TS config)
 }
 
 export default app;

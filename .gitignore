@@ -6,3 +6,7 @@ client/node_modules
 *.log
 dist
 .DS_Store
+<<<<<<< HEAD
+=======
+/server/dev.db
+>>>>>>> a6d5801 (chore(server): run API with ts-node-dev & add TS config)
